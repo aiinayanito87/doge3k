@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doge 3000 (D3K) - The Future of Meme Coins</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .star {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 4rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #00f5ff, #ff00ff, #ffff00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(0, 245, 255, 0.5);
+            margin-bottom: 10px;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.3); }
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #00f5ff;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+        }
+
+        .doge-image {
+            width: 400px;
+            height: 400px;
+            margin: 0 auto 40px;
+            background: linear-gradient(135deg, #00f5ff, #ff00ff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 200px;
+            box-shadow: 0 0 100px rgba(0, 245, 255, 0.6);
+            animation: float 3s ease-in-out infinite, rotate 20s linear infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .doge-image::before {
+            content: '🤖';
+            position: absolute;
+            font-size: 180px;
+        }
+
+        .doge-image::after {
+            content: '🐕';
+            position: absolute;
+            font-size: 120px;
+            opacity: 0.6;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes rotate {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .hero-description {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+            color: #b3b3b3;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #00f5ff, #ff00ff);
+            color: #000;
+            box-shadow: 0 10px 40px rgba(0, 245, 255, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 60px rgba(0, 245, 255, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 3px solid #00f5ff;
+            color: #00f5ff;
+        }
+
+        .btn-secondary:hover {
+            background: #00f5ff;
+            color: #000;
+            transform: translateY(-5px);
+        }
+
+        .features {
+            padding: 80px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            margin: 40px 0;
+        }
+
+        .features-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            text-transform: uppercase;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(255, 0, 255, 0.1));
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid rgba(0, 245, 255, 0.3);
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: #00f5ff;
+            box-shadow: 0 20px 60px rgba(0, 245, 255, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #00f5ff;
+        }
+
+        .feature-description {
+            font-size: 1.1rem;
+            color: #b3b3b3;
+            line-height: 1.6;
+        }
+
+        .tokenomics {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .tokenomics-title {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            text-transform: uppercase;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(255, 0, 255, 0.2), rgba(0, 245, 255, 0.2));
+            padding: 40px 30px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 0, 255, 0.3);
+        }
+
+        .stat-value {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ff00ff;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            color: #b3b3b3;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(0, 0, 0, 0.5);
+            margin-top: 80px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .social-link {
+            font-size: 2.5rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .social-link:hover {
+            transform: scale(1.2);
+            filter: drop-shadow(0 0 20px #00f5ff);
+        }
+
+        .copyright {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-description {
+                font-size: 1.2rem;
+            }
+
+            .doge-image {
+                width: 300px;
+                height: 300px;
+            }
+
+            .doge-image::before {
+                font-size: 140px;
+            }
+
+            .doge-image::after {
+                font-size: 90px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+
+    <div class="container">
+        <header>
+            <h1 class="logo">DOGE 3000</h1>
+            <p class="tagline">D3K - THE FUTURE IS NOW</p>
+        </header>
+
+        <section class="hero">
+            <div class="doge-image"></div>
+            <h2 class="hero-title">The Next Evolution</h2>
+            <p class="hero-description">
+                Doge 3000 is the next evolution. More tech. More memes. More pump. 
+                The legendary Shiba Inu has been upgraded for the future with chrome textures, hologram eyes, and neon-powered dreams.
+            </p>
+            <div class="cta-buttons">
+                <a href="https://doge3000x.io" class="btn btn-primary" target="_blank">Visit Website</a>
+                <a href="https://t.me/doge3000portal" class="btn btn-secondary" target="_blank">Join Telegram</a>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2 class="features-title">Why D3K?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3 class="feature-title">To The Moon</h3>
+                    <p class="feature-description">Not just the moon—we're going to Mars, Jupiter, and beyond. Strap in for the ride of your life.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💎</div>
+                    <h3 class="feature-title">Diamond Paws</h3>
+                    <p class="feature-description">Built for holders. Doge 3000 rewards those with the strongest conviction and the coolest cybernetic enhancements.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">AI-Powered</h3>
+                    <p class="feature-description">Combining cutting-edge tech with meme culture. This isn't your grandpa's Doge—it's the upgraded, turbocharged version.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3 class="feature-title">Community Driven</h3>
+                    <p class="feature-description">Join thousands of cyber-doge enthusiasts in our thriving community. The future is collaborative, not solitary.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Lightning Fast</h3>
+                    <p class="feature-description">Transactions at the speed of light. No more waiting around—D3K operates in the future where everything is instant.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎮</div>
+                    <h3 class="feature-title">Meme Legacy</h3>
+                    <p class="feature-description">Honoring the OG Doge while pushing boundaries. Nostalgia meets innovation in the most epic way possible.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="tokenomics">
+            <h2 class="tokenomics-title">Tokenomics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">1B</div>
+                    <div class="stat-label">Total Supply</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">3000X</div>
+                    <div class="stat-label">Moon Potential</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Community Owned</div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="social-links">
+                <a href="https://doge3000x.io" target="_blank" class="social-link">🌐</a>
+                <a href="https://t.me/doge3000portal" target="_blank" class="social-link">✈️</a>
+                <span class="social-link">🐦</span>
+            </div>
+            <p class="copyright">© 2025 Doge 3000 (D3K). All rights reserved. Not financial advice. DYOR.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Generate stars
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.width = Math.random() * 3 + 'px';
+            star.style.height = star.style.width;
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            starsContainer.appendChild(star);
+        }
+
+        // Parallax effect on mouse move
+        document.addEventListener('mousemove', (e) => {
+            const stars = document.querySelectorAll('.star');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            stars.forEach((star, index) => {
+                const speed = (index % 3 + 1) * 20;
+                star.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
